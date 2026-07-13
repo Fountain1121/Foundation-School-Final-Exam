@@ -152,11 +152,17 @@
         const checked = state.essayChoices.includes(i);
         const disable = !checked && state.essayChoices.length >= EXAM_META.essaysRequired;
         const row = document.createElement("label");
-        row.className = "essay-pick-row" + (checked ? " checked" : "");
+        row.className = "essay-pick-row" + (checked ? " checked" : "") + (disable ? " is-disabled" : "");
         row.innerHTML = `
-          <input type="checkbox" ${checked ? "checked" : ""} ${disable ? "disabled" : ""} data-idx="${i}">
-          <span class="num">Question ${i + 1}</span>
-          ${disable ? '<span class="disabled-note">Four already selected</span>' : ""}
+          <div class="essay-pick-top">
+            <input type="checkbox" ${checked ? "checked" : ""} ${disable ? "disabled" : ""} data-idx="${i}">
+            <span class="num">Question ${i + 1}</span>
+            ${disable ? '<span class="disabled-note">Four already selected</span>' : ""}
+          </div>
+          <div class="essay-pick-preview">
+            <p><span class="part-tag">(a)</span> ${item.a}</p>
+            <p><span class="part-tag">(b)</span> ${item.b}</p>
+          </div>
         `;
         picker.appendChild(row);
         const cb = row.querySelector("input");
