@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundation School Examination — In Progress</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="exam-bar">
+  <div class="who">Index No. <strong id="whoId">&mdash;</strong></div>
+  <div class="timer" id="timer">2:00:00</div>
+  <div class="autosave-note"><span class="dot"></span><span id="saveNote">Answers save automatically</span></div>
+</div>
+<div class="progress-rule"><div class="fill" id="progressFill" style="width:0%"></div></div>
+
+<div class="page" style="padding-top:28px">
+  <div class="sheet sheet-wide" id="examRoot">
+    <!-- Sections A, B, C are injected here by exam.js -->
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/exam.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submitted — Foundation School Examination</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="sheet">
+    <div class="seal-wrap">
+      <svg class="wax-seal" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" fill="#A9802F" opacity="0.12"/>
+        <circle cx="60" cy="60" r="46" stroke="#8A6A24" stroke-width="2"/>
+        <circle cx="60" cy="60" r="46" stroke="#8A6A24" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" />
+        <path d="M60 38V82M42 46H78" stroke="#8A6A24" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 82L52 74M60 82L68 74" stroke="#8A6A24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1>Your paper has been submitted</h1>
+      <p>Index number <strong id="idShown"></strong>, your answers have been recorded. Your marker will review your script and your results will be shared through the usual channel. You may now close this window.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const justSubmitted = sessionStorage.getItem("justSubmitted");
+  const sid = sessionStorage.getItem("examStudentId");
+  if (!justSubmitted) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("idShown").textContent = sid || "";
+    sessionStorage.removeItem("justSubmitted");
+    sessionStorage.removeItem("examStudentId");
+    sessionStorage.removeItem("examStudentName");
+  }
+</script>
+</body>
+</html>

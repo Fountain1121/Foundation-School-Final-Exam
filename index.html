@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundation School Examination — Love Country Church</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="sheet">
+    <div class="masthead">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 10V30M12 15H28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <p class="church">Love Country Church</p>
+      <h1>Foundation School Examination</h1>
+      <p class="course">Our Identity in Christ and Scripture Memorization</p>
+    </div>
+
+    <div class="login-body">
+      <div class="field">
+        <label for="studentId">Your Index Number</label>
+        <input type="text" id="studentId" autocomplete="off" placeholder="e.g. FS-2026-014" autocapitalize="characters">
+      </div>
+      <button class="btn btn-primary btn-block" id="enterBtn" type="button">Enter Examination</button>
+      <p class="error-text" id="loginError"></p>
+      <p class="hint-text">Use the exact index number given to you by the school. Once you submit your paper, this number cannot be used again.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
